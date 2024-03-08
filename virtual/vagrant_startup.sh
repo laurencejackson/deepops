@@ -126,17 +126,17 @@ case "$ID" in
 
     if [ -n "${HTTP_PROXY,,}" ] || [ -n "${http_proxy,,}" ]; then
     # Create VAGRANT_HTTP_PROXY variable with the value of the existing variable
-    VAGRANT_HTTP_PROXY="${HTTP_PROXY:-$http_proxy}"
+    export VAGRANT_HTTP_PROXY="${HTTP_PROXY:-$http_proxy}"
     echo "VAGRANT_HTTP_PROXY variable created with value: $VAGRANT_HTTP_PROXY"
     fi
     if [ -n "${HTTPS_PROXY,,}" ] || [ -n "${https_proxy,,}" ]; then
     # Create VAGRANT_HTTP_PROXY variable with the value of the existing variable
-    VAGRANT_HTTPS_PROXY="${HTTPS_PROXY:-$https_proxy}"
+    export VAGRANT_HTTPS_PROXY="${HTTPS_PROXY:-$https_proxy}"
     echo "VAGRANT_HTTPS_PROXY variable created with value: $VAGRANT_HTTPS_PROXY"
     fi
     if [ -n "${NO_PROXY,,}" ] || [ -n "${no_proxy,,}" ]; then
     # Create VAGRANT_HTTP_PROXY variable with the value of the existing variable
-    VAGRANT_NO_PROXY="${NO_PROXY:-$no_proxy}"
+    export VAGRANT_NO_PROXY="${NO_PROXY:-$no_proxy}"
     echo "VAGRANT_NO_PROXY variable created with value: $VAGRANT_NO_PROXY"
     fi
     # End Install Vagrant & Dependencies for Debian Systems
