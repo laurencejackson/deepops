@@ -119,7 +119,7 @@ case "$ID" in
       # install vagrant plugins
       vagrant plugin install vagrant-libvirt
       vagrant plugin install vagrant-host-shell vagrant-scp vagrant-mutate
-      vargran plugin install vagrant-proxyconf
+      vagrant plugin install vagrant-proxyconf
     fi
     vagrant --version
     # End Install Vagrant & Dependencies for Debian Systems
