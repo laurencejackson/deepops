@@ -122,19 +122,19 @@ case "$ID" in
       vagrant plugin install vagrant-proxyconf
 
       # Check if HTTP_PROXY variable exists
-      if [ -n "$HTTP_PROXY" ]; then
+      if [ -n "$(echo "$HTTP_PROXY" | tr '[:upper:]' '[:lower:]')" ]; then
           # Create VAGRANT_HTTP_PROXY variable with the same value as HTTP_PROXY
           export VAGRANT_HTTP_PROXY="$HTTP_PROXY"
           echo "VAGRANT_HTTP_PROXY variable created with value: $VAGRANT_HTTP_PROXY"
       fi
       # Check if HTTPS_PROXY variable exists
-      if [ -n "$HTTPS_PROXY" ]; then
+      if [ -n "$(echo "$HTTPS_PROXY" | tr '[:upper:]' '[:lower:]')" ]; then
           # Create VAGRANT_HTTP_PROXY variable with the same value as HTTP_PROXY
           export VAGRANT_HTTPS_PROXY="$HTTPS_PROXY"
           echo "VAGRANT_HTTPS_PROXY variable created with value: $VAGRANT_HTTPS_PROXY"
       fi
       # Check if NO_PROXY variable exists
-      if [ -n "$NO_PROXY" ]; then
+      if [ -n "$(echo "$NO_PROXY" | tr '[:upper:]' '[:lower:]')" ]; then
           # Create VAGRANT_HTTP_PROXY variable with the same value as HTTP_PROXY
           export VAGRANT_NO_PROXY="$NO_PROXY"
           echo "VAGRANT_NO_PROXY variable created with value: $VAGRANT_NO_PROXY"
