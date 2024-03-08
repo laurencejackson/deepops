@@ -111,13 +111,15 @@ case "$ID" in
     if ! which vagrant >/dev/null 2>&1; then
       # install vagrant (frozen at 2.2.3 to avoid various issues)
       pushd "$(mktemp -d)"
-      wget https://releases.hashicorp.com/vagrant/2.2.14/vagrant_2.2.14_x86_64.deb -O vagrant.deb
+      # wget https://releases.hashicorp.com/vagrant/2.2.14/vagrant_2.2.14_x86_64.deb -O vagrant.deb
+      wget https://releases.hashicorp.com/vagrant/2.4.1/vagrant_2.4.1-1_amd64.deb -O vagrant.deb
       sudo dpkg -i vagrant.deb
       popd
   
       # install vagrant plugins
       vagrant plugin install vagrant-libvirt
       vagrant plugin install vagrant-host-shell vagrant-scp vagrant-mutate
+      vargran plugin install vagrant-proxyconf
     fi
     vagrant --version
     # End Install Vagrant & Dependencies for Debian Systems
