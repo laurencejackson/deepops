@@ -121,7 +121,10 @@ case "$ID" in
       vagrant plugin install vagrant-host-shell vagrant-scp vagrant-mutate
       vagrant plugin install vagrant-proxyconf
 
-      # Check if HTTP_PROXY variable exists
+    fi
+    vagrant --version
+
+    # Check if HTTP_PROXY variable exists
       if [ -n "$(echo "$HTTP_PROXY" | tr '[:upper:]' '[:lower:]')" ]; then
           # Create VAGRANT_HTTP_PROXY variable with the same value as HTTP_PROXY
           export VAGRANT_HTTP_PROXY="$HTTP_PROXY"
@@ -139,9 +142,7 @@ case "$ID" in
           export VAGRANT_NO_PROXY="$NO_PROXY"
           echo "VAGRANT_NO_PROXY variable created with value: $VAGRANT_NO_PROXY"
       fi
-
-    fi
-    vagrant --version
+    
     # End Install Vagrant & Dependencies for Debian Systems
     ;;
   *)
